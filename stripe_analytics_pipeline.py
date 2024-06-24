@@ -12,8 +12,8 @@ from stripe_analytics import (
     stripe_source,
 )
 
-PIPELINE_NAME = 'stripe_to_postgres'
-DESTINATION_NAME = 'postgres'
+PIPELINE_NAME = 'stripe_to_duckdb'
+DESTINATION_NAME = 'duckdb'
 DEFAULT_DATASET_NAME = 'dlt_stripe'
 
 
@@ -86,7 +86,7 @@ def incremental_load(
 
 
 def cli():
-    parser = argparse.ArgumentParser(description="CLI for loading data from Stripe to PostgreSQL.")
+    parser = argparse.ArgumentParser(description="CLI for loading data from Stripe to DuckDB.")
     parser.add_argument(
         "--dataset-name",
         type=str,

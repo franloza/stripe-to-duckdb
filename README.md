@@ -1,4 +1,6 @@
-# stripe-to-postgres
+# stripe-to-duckdb
+
+Forked from [stripe-to-postgres](https://github.com/franloza/stripe-to-postgres)
 
 ## Getting Started
 
@@ -17,13 +19,18 @@ make build
 make docker-run
 ```
 
+You can test the data with the following command using DuckDB CLI:
+```
+duckdb -c "select table_name from information_schema.tables where table_catalog = 'stripe_to_duckdb'" stripe_to_duckdb.duckdb
+```
+
 ## CLI Usage
 
 ```
 python stripe_analytics_pipeline.py --help                                                
 usage: stripe_analytics_pipeline.py [-h] [--dataset-name DATASET_NAME] {full_load,incremental_load} ...
 
-CLI for loading data from Stripe to PostgreSQL.
+CLI for loading data from Stripe to DuckDB.
 
 positional arguments:
   {full_load,incremental_load}

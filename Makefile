@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := run
-IMAGE_NAME=stripe-to-postgres
+IMAGE_NAME=stripe-to-duckdb
 
 run:
 	python stripe_analytics_pipeline.py full_load --skip-incremental-endpoints
